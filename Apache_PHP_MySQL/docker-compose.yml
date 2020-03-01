@@ -25,6 +25,10 @@ services:
         ipv4_address: 172.10.3.2
     env_file:
       - ./development.env
+    #Here place a file with DB dumb from porduction database
+    volumes:
+      - /home/admin/Docker/docker_sandbox/Apache_PHP_MySQL/dumb.sql:/docker-entrypoint-initdb.d/dumb.sql
+
   www:
     build: ./httpd
     ports:
